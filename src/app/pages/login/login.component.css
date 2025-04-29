@@ -1,0 +1,193 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+
+
+
+
+
+
+
+body, html {
+
+ margin: 0;
+
+ padding: 0;
+
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+ background-color: #f0f4f8;
+
+}
+
+.left-section {
+
+ background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+
+ color: #fff;
+
+ text-align: center;
+
+ padding: 20px;
+
+ animation: fadeInLeft 1s ease-in-out;
+
+}
+
+.left-section img {
+
+ width: 250px;
+
+ max-width: 100%;
+
+ margin-bottom: 20px;
+
+ animation: fadeInDown 1s;
+
+}
+
+.left-section h1 {
+
+ font-size: 3.5rem;
+
+ font-weight: bold;
+
+ margin-bottom: 20px;
+
+}
+
+.left-section p {
+
+ font-size: 1.2rem;
+
+ font-style: italic;
+
+ max-width: 300px;
+
+ margin: 0 auto;
+
+}
+
+.right-section {
+
+ background: #ffffff;
+
+ display: flex;
+
+ align-items: center;
+
+ justify-content: center;
+
+ padding: 30px;
+
+ position: relative;
+
+ overflow: hidden;
+
+}
+
+.form-card {
+
+ width: 100%;
+
+ max-width: 450px;
+
+ background: rgba(255, 255, 255, 0.85);
+
+ backdrop-filter: blur(10px);
+
+ border-radius: 16px;
+
+ padding: 30px;
+
+ box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+
+ animation: fadeInUp 0.8s;
+
+}
+
+.nav-pills .nav-link {
+
+ color: #6c757d;
+
+ font-weight: 500;
+
+ transition: 0.3s ease;
+
+}
+
+.nav-pills .nav-link.active {
+
+ background-color: #4A00E0;
+
+ color: white;
+
+}
+
+.form-label {
+
+ font-weight: 600;
+
+}
+
+.form-control {
+
+ border-radius: 8px;
+
+ padding: 10px;
+
+ border: 1px solid #ced4da;
+
+}
+
+.form-control:focus {
+
+ box-shadow: 0 0 0 0.2rem rgba(138, 43, 226, 0.25);
+
+ border-color: #8e2de2;
+
+}
+
+.btn {
+
+ border-radius: 8px;
+
+ font-weight: bold;
+
+}
+
+.btn-primary {
+
+ background-color: #4A00E0;
+
+ border: none;
+
+}
+
+.btn-success {
+
+ background-color: #28a745;
+
+ border: none;
+
+}
+
+a {
+
+ color: #4A00E0;
+
+ text-decoration: none;
+
+}
+
+a:hover {
+
+ text-decoration: underline;
+
+}
+
+@keyframes fadeInLeft {
+
+ from { opacity: 0; transform: translateX(-30px); }
+
+ to { opacity: 1; transform: translateX(0); }
+
+}

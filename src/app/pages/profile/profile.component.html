@@ -1,0 +1,131 @@
+<div class="hero-banner">
+  <h1>Welcome, {{ user.name }} 🌿</h1>
+  <p class="subtitle">Here’s your environmental impact summary and profile details.</p>
+</div>
+
+<div class="profile-container container mt-4">
+  <!-- Summary Cards -->
+  <div class="summary-cards">
+    <div class="card">
+      <h4>🏠 Household Emissions</h4>
+      <p>{{ userSubmissions.household.length }} Records</p>
+    </div>
+    <div class="card">
+      <h4>🚗 Transport Emissions</h4>
+      <p>{{ userSubmissions.transport.length }} Records</p>
+    </div>
+    <div class="card">
+      <h4>🗑 Waste Emissions</h4>
+      <p>{{ userSubmissions.waste.length }} Records</p>
+    </div>
+  </div>
+
+  <!-- User Profile -->
+  <h2 class="section-heading">👤 User Profile</h2>
+  <form class="mb-5">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label for="name">Name</label>
+          <input id="name" type="text" [(ngModel)]="user.name" name="name" class="form-control" readonly />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label for="email">Email</label>
+          <input id="email" type="email" [(ngModel)]="user.email" name="email" class="form-control" readonly />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="text" [(ngModel)]="user.phoneNumber" name="phone" class="form-control" readonly />
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="updateProfile()">Update Profile</button>
+  </form>
+
+  <!-- Submission Filter -->
+  <h3 class="section-heading">📊 User Submissions</h3>
+  <div class="btn-group mb-3" role="group">
+    <button type="button" class="btn btn-outline-primary" [class.active]="selectedCategory === 'household'" (click)="selectedCategory = 'household'">Household</button>
+    <button type="button" class="btn btn-outline-primary" [class.active]="selectedCategory === 'transport'" (click)="selectedCategory = 'transport'">Transport</button>
+    <button type="button" class="btn btn-outline-primary" [class.active]="selectedCategory === 'waste'" (click)="selectedCategory = 'waste'">Waste</button>
+  </div>
+
+  <!-- Household Data -->
+  <div *ngIf="selectedCategory === 'household'">
+    <h3>🏠 Household Data</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Recorded Date</th>
+          <th>Electricity Usage</th>
+          <th>LPG Usage</th>
+          <th>Coal Usage</th>
+          <th>Emissions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of userSubmissions.household">
+          <td>{{ record.recordedDate }}</td>
+          <td>{{ record.electricityUsage }}</td>
+          <td>{{ record.lpgUsage }}</td>
+          <td>{{ record.coalUsage }}</td>
+          <td>{{ record.houseHoldEmission }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Transport Data -->
+  <div *ngIf="selectedCategory === 'transport'">
+    <h3>🚗 Transport Data</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Recorded Date</th>
+          <th>Petrol Used</th>
+          <th>Diesel Used</th>
+          <th>CNG Used</th>
+          <th>Emissions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of userSubmissions.transport">
+          <td>{{ record.recordedDate }}</td>
+          <td>{{ record.petrolUsage }}</td>
+          <td>{{ record.dieselUsage }}</td>
+          <td>{{ record.cngUsage }}</td>
+          <td>{{ record.transportEmission }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Waste Data -->
+  <div *ngIf="selectedCategory === 'waste'">
+    <h3>🗑 Waste Data</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Recorded Date</th>
+          <th>Recycled Waste</th>
+          <th>Compost Waste</th>
+          <th>Landfill Waste</th>
+          <th>Emissions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of userSubmissions.waste">
+          <td>{{ record.recordedDate }}</td>
+          <td>{{ record.recycledWaste }}</td>
+          <td>{{ record.compostWaste }}</td>
+          <td>{{ record.landfillWaste }}</td>
+          <td>{{ record.wasteEmission }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

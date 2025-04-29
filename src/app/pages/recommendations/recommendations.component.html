@@ -1,0 +1,27 @@
+<div [ngStyle]="{
+  'background-color': getLightColor(data.bgColor), 
+  'padding': '20px', 
+  'border': '3px solid ' + getDarkColor(data.bgColor)}">
+  <mat-dialog-content>
+
+    <!-- Dialog Title with Dynamic Icons based on Category -->
+    <h2 mat-dialog-title>
+      <mat-icon *ngIf="data.category === 'Good'" aria-hidden="false" aria-label="Good">thumb_up</mat-icon>
+      <mat-icon *ngIf="data.category === 'Satisfactory'" aria-hidden="false" aria-label="Satisfactory">check_circle</mat-icon>
+      <mat-icon *ngIf="data.category === 'Moderate'" aria-hidden="false" aria-label="Moderate">access_alarm</mat-icon>
+      <mat-icon *ngIf="data.category === 'Poor'" aria-hidden="false" aria-label="Poor">warning</mat-icon>
+      <mat-icon *ngIf="data.category === 'Very Poor'" aria-hidden="false" aria-label="Very Poor">error_outline</mat-icon>
+      <mat-icon *ngIf="data.category === 'Severe'" aria-hidden="false" aria-label="Severe">cancel</mat-icon>
+
+      {{ data.category }}
+    </h2>
+    
+    <!-- Recommendation Message -->
+    <p>{{ data.recommendationMessage }}</p>
+
+    <!-- Action Buttons -->
+    <mat-dialog-actions>
+      <button mat-button [mat-dialog-close]>Close</button>
+    </mat-dialog-actions>
+  </mat-dialog-content>
+</div>

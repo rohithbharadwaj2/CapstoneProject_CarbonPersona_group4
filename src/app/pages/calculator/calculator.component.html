@@ -1,0 +1,80 @@
+<!-- Include Google Material Icons if not already present -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="container py-5 calculator-page">
+  <h1 class="display-5 text-center mb-4 fw-bold text-dark">
+    <span class="material-icons align-middle text-success">eco</span> Carbon Footprint Calculator
+  </h1>
+
+  <form (ngSubmit)="onSubmit()">
+    <!-- Recorded Date -->
+    <div class="mb-4">
+      <label for="recDate" class="form-label">Recorded Date</label>
+      <input type="date"
+             [(ngModel)]="household.RecordedDate"
+             [(ngModel)]="transportation.RecordedDate"
+             [(ngModel)]="wasteManagement.RecordedDate"
+             [(ngModel)]="totalemission.recordedDate"
+             class="form-control shadow-sm" id="recDate" name="recDate" required>
+    </div>
+
+    <!-- Household -->
+    <h3 class="section-title"><span class="material-icons text-success">home</span> Household</h3>
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="electricityUsage" class="form-label">Electricity (kWh)</label>
+        <input type="number" [(ngModel)]="household.electricityUsage" class="form-control shadow-sm" id="electricityUsage" name="electricityUsage" required>
+      </div>
+      <div class="col-md-4">
+        <label for="lpgUsage" class="form-label">LPG (kg)</label>
+        <input type="number" [(ngModel)]="household.lpgUsage" class="form-control shadow-sm" id="lpgUsage" name="lpgUsage" required>
+      </div>
+      <div class="col-md-4">
+        <label for="coalUsage" class="form-label">Coal (kg)</label>
+        <input type="number" [(ngModel)]="household.coalUsage" class="form-control shadow-sm" id="coalUsage" name="coalUsage" required>
+      </div>
+    </div>
+
+    <!-- Transportation -->
+    <h3 class="section-title"><span class="material-icons text-success">directions_car</span> Transportation</h3>
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="petrolUsage" class="form-label">Petrol (liters)</label>
+        <input type="number" [(ngModel)]="transportation.petrolUsage" class="form-control shadow-sm" id="petrolUsage" name="petrolUsage" required>
+      </div>
+      <div class="col-md-4">
+        <label for="dieselUsage" class="form-label">Diesel (liters)</label>
+        <input type="number" [(ngModel)]="transportation.dieselUsage" class="form-control shadow-sm" id="dieselUsage" name="dieselUsage" required>
+      </div>
+      <div class="col-md-4">
+        <label for="cngUsage" class="form-label">CNG (kg)</label>
+        <input type="number" [(ngModel)]="transportation.cngUsage" class="form-control shadow-sm" id="cngUsage" name="cngUsage" required>
+      </div>
+    </div>
+
+    <!-- Waste Management -->
+    <h3 class="section-title"><span class="material-icons text-success">delete</span> Waste Management</h3>
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="recycledWaste" class="form-label">Recycled (kg)</label>
+        <input type="number" [(ngModel)]="wasteManagement.recycledWaste" class="form-control shadow-sm" id="recycledWaste" name="recycledWaste" required>
+      </div>
+      <div class="col-md-4">
+        <label for="compostWaste" class="form-label">Compost (kg)</label>
+        <input type="number" [(ngModel)]="wasteManagement.compostWaste" class="form-control shadow-sm" id="compostWaste" name="compostWaste" required>
+      </div>
+      <div class="col-md-4">
+        <label for="landfillWaste" class="form-label">Landfill (kg)</label>
+        <input type="number" [(ngModel)]="wasteManagement.landfillWaste" class="form-control shadow-sm" id="landfillWaste" name="landfillWaste" required>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center mt-4">
+      <button mat-raised-button type="submit" class="btn btn-success px-4 py-2 rounded-pill shadow-sm">
+        <span class="material-icons align-middle">calculate</span>
+        <span class="align-middle ms-2">Calculate Footprint</span>
+      </button>
+    </div>
+  </form>
+</div>

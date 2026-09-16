@@ -1,27 +1,76 @@
-# EcolLifeFrontend
+# Carbon Persona
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+### UST capstone · Carbon-footprint analytics and personalized sustainability workflows
 
-## Development server
+Carbon Persona is a full-stack capstone project associated with my software-engineering experience at **UST**. The application turns household, transportation, and waste activity into an interactive carbon-footprint experience with recommendations, profile workflows, administrative views, and air-quality information.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This repository now exposes the actual Angular application source on the default `main` branch. The source had previously been left on the historical `master` branch while `main` showed only documentation.
 
-## Code scaffolding
+## Product Surface
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The Angular application includes routes/components for:
 
-## Build
+- authenticated Home and About experiences,
+- carbon-footprint Calculator,
+- Recommendations,
+- Profile and Update Profile,
+- role-restricted Admin Dashboard,
+- Air Quality,
+- Login and navigation workflows.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The router uses an authentication guard, with the dashboard carrying an `Admin` role requirement. An HTTP interceptor is configured at the application level for authenticated API communication.
 
-## Running unit tests
+## Frontend Architecture
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```text
+Angular 18 application
+       │
+       ├── Authentication + route guard
+       ├── HTTP interceptor
+       │
+       ├── Carbon Calculator
+       │     ├── Household
+       │     ├── Transportation
+       │     └── Waste
+       │
+       ├── Recommendations
+       ├── Profile / Update
+       ├── Air Quality
+       └── Admin Dashboard
+              │
+              ▼
+        REST service layer
+```
 
-## Running end-to-end tests
+## Frontend Stack
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+`Angular 18` · `TypeScript` · `Angular Material` · `Bootstrap 5` · `Chart.js` · `ng2-charts` · `RxJS` · `jsPDF`
 
-## Further help
+The project configuration also includes AngularFire/Firebase packages and PDF-generation tooling.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Full Capstone Architecture
+
+The capstone was built around an Angular frontend integrated with C#/.NET REST services for authentication and carbon-emissions domains, including household, transportation, waste, recommendations, and air-quality workflows. The broader project used authenticated API communication and persisted application data.
+
+This public repository currently exposes the Angular client. The README distinguishes that public source from the broader capstone architecture rather than implying every service is present in this repository.
+
+## Engineering Focus
+
+The project demonstrates the software-engineering side of my profile: multi-page application architecture, guarded routes, role-aware UI, HTTP/API integration, forms and validation, dashboard-style interfaces, domain separation, and integration of external air-quality data.
+
+## Run the Frontend
+
+```bash
+npm install
+npm start
+```
+
+Angular serves the development application at `http://localhost:4200/` by default. API-dependent workflows require the corresponding backend services/configuration.
+
+## Repository History
+
+This was a collaborative capstone. The repository preserves the original project history and should not be interpreted as evidence that every component was authored by a single contributor.
+
+## Portfolio
+
+For the recruiter-oriented project story and architecture visualization, see my portfolio: `rohithbharadwaj2.github.io/Rohith-portfolio/`.

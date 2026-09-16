@@ -1,0 +1,32 @@
+<div class="container my-5">
+  <h2 class="text-center mb-5 display-6 text-dark fw-bold">🌍 Global Air Quality Index</h2>
+
+  <!-- City Selector -->
+  <div class="text-center mb-4">
+    <label for="city" class="fw-semibold me-2">Select a City:</label>
+    <select
+      id="city"
+      [(ngModel)]="city"
+      (change)="fetchAirQuality()"
+      class="form-select mx-auto"
+    >
+      <option *ngFor="let cityName of cities" [value]="cityName">{{ cityName }}</option>
+    </select>
+  </div>
+
+  <!-- AQI Display -->
+  <div *ngIf="airQualityData" class="aqi-container mx-auto">
+    <h4 class="text-center text-dark mb-2">{{ airQualityData.city.name }}</h4>
+    <p class="text-center text-muted">🕒 Last Updated: {{ airQualityData.time.iso | date: 'medium' }}</p>
+    <p class="aqi-value text-center">🌫 AQI: {{ airQualityData.aqi }}</p>
+    <p class="dominant-pollutant text-center">Dominant Pollutant: {{ airQualityData.dominentpol }}</p>
+
+    <!-- Forecast -->
+    <div class="forecast mt-4">
+      <h5 class="text-center text-secondary mb-3">📅 PM2.5 Forecast</h5>
+      <div *ngFor="let day of airQualityData.forecast.daily.pm25" class="forecast-day text-center">
+        <strong>{{ day.day }}</strong>: Min {{ day.min }} | Max {{ day.max }}
+      </div>
+    </div>
+  </div>
+</div>

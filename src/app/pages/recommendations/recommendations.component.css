@@ -1,0 +1,54 @@
+/* Style for overall container */
+div {
+  border-radius: 30px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2); /* Light background */
+  backdrop-filter: blur(12px); /* Glassmorphism effect */
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+}
+
+/* Dialog title styling */
+.mat-dialog-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333; /* Dark text for title */
+}
+
+/* Dialog content styling */
+.mat-dialog-content {
+  color: #495057; /* Dark gray text */
+  padding: 20px;
+  font-size: 16px; /* More readable font size */
+  line-height: 1.6; /* Improved line height for readability */
+}
+
+/* Icon styling */
+.mat-icon {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Action buttons container styling */
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Button styling */
+button {
+  background-color: #4caf50; /* Green button */
+  color: white;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 14px;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

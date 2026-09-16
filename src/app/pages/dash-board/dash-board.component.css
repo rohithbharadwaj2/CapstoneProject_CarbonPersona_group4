@@ -1,0 +1,58 @@
+.table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f1f3f5;
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.tabs button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-weight: 500;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 6px;
+}
+
+.tabs button:hover {
+  background-color: #e2e6ea;
+}
+
+.tabs button:focus {
+  background-color: #ced4da;
+}
